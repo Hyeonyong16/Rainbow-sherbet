@@ -1,0 +1,2 @@
+D:\Unity\TeamProject\Rainbow-sherbet\Rainbow_Sherbet\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Unity\TeamProject\Rainbow-sherbet\Rainbow_Sherbet\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
