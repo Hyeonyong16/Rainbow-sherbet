@@ -40,9 +40,10 @@ public class MapEditManager : MonoBehaviour
             //그에 맞는 블럭 프리팹을 들고옴
             GameObject go = Instantiate(
                 prefabsManager.GetBlockObject(mapBlocks[i]),
-                pos,
+                Vector3.zero,
                 Quaternion.identity
                 ) as GameObject;
+            go.GetComponent<BlockInfo>().SetBlockPos(new Vector2(pos.x, pos.z));
             go.transform.parent = parentObject.transform;
         }
     }

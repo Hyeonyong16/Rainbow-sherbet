@@ -20,6 +20,7 @@ public class PrefabsManager : MonoBehaviour
         
     }
 
+    //설치할 블럭의 프리팹을 넘겨줌
     public GameObject GetBlockObject(string blockName)
     {
         if(blockName[0] == 'N')
