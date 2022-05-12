@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -99,11 +100,14 @@ public class PlayerController : MonoBehaviour
     //클릭을 통해 블럭 설치 및 해제
     void MouseInput()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
+
             Debug.Log(hit.transform.gameObject);
 
             //마우스 커서 갖다 댄 큐브 마테리얼 변경
