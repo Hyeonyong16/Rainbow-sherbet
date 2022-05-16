@@ -112,22 +112,43 @@ public class PlayerController : MonoBehaviour
 
             //마우스 커서 갖다 댄 큐브 마테리얼 변경
             Material[] mat = hit.transform.gameObject.GetComponent<MeshRenderer>().materials;
-            if (mat[0].name != "CursoredBlock")
+            if (mat[0].color.a != cursoredMat.color.a)
             {
-                mat[0] = cursoredMat;
+                //마테리얼의 알파값을 변경하여 커서가 있는 블럭을 표시
+                Color tempColor = mat[0].color;
+                tempColor.a = cursoredMat.color.a;
+                mat[0].color = tempColor;
                 hit.transform.gameObject.GetComponent<MeshRenderer>().materials = mat;
             }
 
             //마우스 좌클릭(블럭 설정)
             if(Input.GetMouseButtonDown(0))
             {
+                //클릭된 블럭의 정보를 갖고와 Pos를 통해 배열의 위치 찾음
+                BlockInfo blockInfo = hit.transform.gameObject.GetComponent<BlockInfo>();
+                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * 10);
 
+                //string 부분 변경후 블럭생성
+                mapEditManager.mapBlocks[blockNum] = mapEditManager.selectedBlock;
+                mapEditManager.CreateBlock(blockNum);
+
+                //기존 게임오브젝트는 삭제
+                Destroy(blockInfo.gameObject);
             }
 
-            //마우스 우클릭(블럭 해제: Noneblock으로 변경)
+            //마우스 우클릭(블럭 해제: NULL으로 변경)
             else if(Input.GetMouseButtonDown(1))
             {
+                //클릭된 블럭의 정보를 갖고와 Pos를 통해 배열의 위치 찾음
+                BlockInfo blockInfo = hit.transform.gameObject.GetComponent<BlockInfo>();
+                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * 10);
 
+                //string 부분 변경후 블럭생성
+                mapEditManager.mapBlocks[blockNum] = "NULL";
+                mapEditManager.CreateBlock(blockNum);
+
+                //기존 게임오브젝트는 삭제
+                Destroy(blockInfo.gameObject);
             }
         }
     }

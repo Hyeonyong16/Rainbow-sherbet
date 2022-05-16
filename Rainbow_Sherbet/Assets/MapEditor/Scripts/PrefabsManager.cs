@@ -5,8 +5,9 @@ using UnityEngine;
 public class PrefabsManager : MonoBehaviour
 {
     public GameObject NULLBlock;
-    public List<GameObject> ColorBlocks;
-    public List<GameObject> ObstacleBlocks;
+    public List<GameObject> ColorBlocks;        //색 블럭 프리팹들
+    public List<GameObject> ObstacleBlocks;     //방해물 블럭 프리팹들
+    public List<GameObject> ETCBlocks;          //기타 블럭 프리팹들
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,11 @@ public class PrefabsManager : MonoBehaviour
         {
             int num = int.Parse(blockName[2].ToString() + blockName[3].ToString());
             return ObstacleBlocks[num];
+        }
+        else if (blockName[0] == 'E')
+        {
+            int num = int.Parse(blockName[3].ToString());
+            return ETCBlocks[num];
         }
         return null;
     }

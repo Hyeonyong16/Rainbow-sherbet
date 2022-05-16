@@ -68,7 +68,8 @@ public class BlockInfo : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MapEditor")
         {
             Material[] tempMat = gameObject.GetComponent<MeshRenderer>().materials;
-            tempMat[0] = mat;
+            Color tempColor = mat.color;
+            tempMat[0].color = tempColor;
             gameObject.GetComponent<MeshRenderer>().materials = tempMat;
         }
     }
