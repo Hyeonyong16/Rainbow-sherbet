@@ -10,6 +10,13 @@ public class MapEditManager : MonoBehaviour
     //생성된 블럭이 들어갈 부모 오브젝트
     public GameObject parentObject;
 
+    //UI 매니저
+    public UIButtonManager uIButtonManager;
+
+    //저장 매니저
+    public SaveLoadManager saveLoadManager;
+    public string stageName;    //스테이지 명
+
     //사용되는 블럭들의 프리팹을 저장해놓고 불러오는 매니져
     public PrefabsManager prefabsManager;
     //현재 선택되어있는 설치할 블럭 이름
@@ -84,5 +91,18 @@ public class MapEditManager : MonoBehaviour
         {
             mapBlocks[i] = "NULL";
         }
+    }
+    
+    public void InitMap(MapData data)
+    {
+        stageName = data.stageName;
+        mapBlocks = (string[])data.mapBlocks.Clone();
+
+        foreach(var i in BlocksArray)
+        {
+            Destroy(i);
+        }
+
+        CreateBlock();
     }
 }
