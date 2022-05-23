@@ -7,6 +7,7 @@ public class BtnScripts : MonoBehaviour
 {
     public string currentBtnBlock = "NULL";
     public MapEditManager mapEditManager;
+    public Text text;
 
     Button btn;
 

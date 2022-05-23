@@ -47,6 +47,7 @@ public class UIButtonManager : MonoBehaviour
                     
                     string temp = "CB" + "0" + i.ToString();
                     btns[i].gameObject.GetComponent<BtnScripts>().currentBtnBlock = temp;
+                    btns[i].gameObject.GetComponent<BtnScripts>().text.text = temp;
                     btns[i].gameObject.GetComponent<BtnScripts>().SetOnClickEvent();
                 }
 
@@ -64,6 +65,7 @@ public class UIButtonManager : MonoBehaviour
 
                     string temp = "OB" + "0" + i.ToString();
                     btns[i].gameObject.GetComponent<BtnScripts>().currentBtnBlock = temp;
+                    btns[i].gameObject.GetComponent<BtnScripts>().text.text = temp;
                     btns[i].gameObject.GetComponent<BtnScripts>().SetOnClickEvent();
                 }
 
@@ -81,6 +83,7 @@ public class UIButtonManager : MonoBehaviour
 
                     string temp = "ETC" + i.ToString();
                     btns[i].gameObject.GetComponent<BtnScripts>().currentBtnBlock = temp;
+                    btns[i].gameObject.GetComponent<BtnScripts>().text.text = temp;
                     btns[i].gameObject.GetComponent<BtnScripts>().SetOnClickEvent();
                 }
 
