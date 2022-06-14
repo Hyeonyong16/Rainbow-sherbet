@@ -16,6 +16,12 @@ public class Player : MonoBehaviour
     {
         targetPos += moveDirection;
     }
+
+    public void Rotation(float angle)
+    {
+        this.transform.localEulerAngles = new Vector3(0,angle,0);
+    }
+
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);

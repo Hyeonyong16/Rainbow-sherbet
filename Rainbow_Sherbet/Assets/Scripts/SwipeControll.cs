@@ -27,12 +27,15 @@ public class SwipeControll : MonoBehaviour
         //        fingerDown = false;
         //        Debug.Log("Swipe Up");
         //        player.Move(Vector3.up);
+        //        player.Rotation(0);
+
         //    }
         //    else if (Input.touches[0].position.y <= startPos.y - pixelDistToDetect)
         //    {
         //        fingerDown = false;
         //        Debug.Log("Swipe down");
         //        player.Move(Vector3.down);
+        //        player.Rotation(180);
 
         //    }
         //    else if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
@@ -40,6 +43,7 @@ public class SwipeControll : MonoBehaviour
         //        fingerDown = false;
         //        Debug.Log("Swipe Right");
         //        player.Move(Vector3.right);
+        //        player.Rotation(90);
 
         //    }
         //    else if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
@@ -47,6 +51,7 @@ public class SwipeControll : MonoBehaviour
         //        fingerDown = false;
         //        Debug.Log("Swipe Left");
         //        player.Move(Vector3.left);
+        //        player.Rotation(-90);
 
         //    }
         //}
@@ -66,6 +71,7 @@ public class SwipeControll : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swipe Up");
                 player.Move(Vector3.forward);
+                player.Rotation(0);
 
             }
             else if (Input.mousePosition.y <= startPos.y - pixelDistToDetect)
@@ -73,6 +79,7 @@ public class SwipeControll : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swipe Down");
                 player.Move(Vector3.back);
+                player.Rotation(180);
 
             }
             else if (Input.mousePosition.x >= startPos.x + pixelDistToDetect)
@@ -80,6 +87,7 @@ public class SwipeControll : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swipe right");
                 player.Move(Vector3.right);
+                player.Rotation(90);
 
             }
             else if (Input.mousePosition.x <= startPos.x - pixelDistToDetect)
@@ -87,6 +95,7 @@ public class SwipeControll : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swipe left");
                 player.Move(Vector3.left);
+                player.Rotation(-90);
 
             }
 
