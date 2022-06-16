@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwipeControll : MonoBehaviour
 {
     public Player player; // 플레이어 코드
+    public CameraControll cameraCon; // 카메라 컨트롤 코드
     private Vector2 startPos; // 시작 위치
     public int pixelDistToDetect = 20; //위치 거리
     private bool fingerDown; //스와이프 여부 트리거
@@ -68,6 +69,7 @@ public class SwipeControll : MonoBehaviour
         {
             if (Input.mousePosition.y >= startPos.y + pixelDistToDetect)
             {
+                cameraCon.Move(Vector3.forward);
                 fingerDown = false;
                 Debug.Log("Swipe Up");
                 player.Move(Vector3.forward);
@@ -76,6 +78,7 @@ public class SwipeControll : MonoBehaviour
             }
             else if (Input.mousePosition.y <= startPos.y - pixelDistToDetect)
             {
+                cameraCon.Move(Vector3.back);
                 fingerDown = false;
                 Debug.Log("Swipe Down");
                 player.Move(Vector3.back);
@@ -84,6 +87,7 @@ public class SwipeControll : MonoBehaviour
             }
             else if (Input.mousePosition.x >= startPos.x + pixelDistToDetect)
             {
+                cameraCon.Move(Vector3.right);
                 fingerDown = false;
                 Debug.Log("Swipe right");
                 player.Move(Vector3.right);
@@ -92,6 +96,7 @@ public class SwipeControll : MonoBehaviour
             }
             else if (Input.mousePosition.x <= startPos.x - pixelDistToDetect)
             {
+                cameraCon.Move(Vector3.left);
                 fingerDown = false;
                 Debug.Log("Swipe left");
                 player.Move(Vector3.left);

@@ -8,15 +8,19 @@ public class Player : MonoBehaviour
 
     public float moveSpeed;
     public float currTime;
+    public GameObject teleport; 
 
     public int count;
-
+    public bool teleportButton = false;
+    public bool teleportButton2 = false;
     private Vector3 targetPos;
+    public Vector3 teleportPos;
     public int[] color_count = new int[3]; // ¿¹½Ã
 
     private void Start()
     {
         targetPos = transform.position;
+        teleportPos = teleport.gameObject.transform.position;
         playerColor = gameObject.GetComponent<Renderer>();
         Color_Init();
     }
@@ -72,6 +76,17 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "Teleport")
+        {
+            teleportButton = true;
+            Debug.Log("teleport check");
+        }
+    }
+
+
+
     private void Update()
     {
         currTime += Time.deltaTime;
@@ -88,6 +103,13 @@ public class Player : MonoBehaviour
 
             currTime = 0;
 
+        }
+
+        if (teleportButton == true)
+        {            
+            targetPos = new Vector3(teleportPos.x, teleportPos.y + 1f, teleportPos.z);
+            transform.position = targetPos;         
+            teleportButton = false;
         }
 
     }
