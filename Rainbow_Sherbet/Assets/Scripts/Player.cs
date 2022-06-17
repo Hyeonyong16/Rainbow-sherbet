@@ -9,17 +9,17 @@ public class Player : MonoBehaviour
 
     public float moveSpeed =30f;
     public float currTime; // 지금흐르는시간
-    public float limitTime = 1.2f; // 색상이 바뀌는 제한시간
+    public float limitTime = 1.2f; // 색상이 바뀌는 제한시간 (Default value : 1.2f)
 
-    public GameObject teleport; 
+    public GameObject teleport;
 
-    public int count;
+    public int count = -1;
     public bool teleportButton = false;
     public bool teleportButton2 = false;
     public Vector3 targetPos;
     private Vector3 goPos;
     public Vector3 teleportPos;
-    public int[] color_count = new int[3]; // 예시
+    public int[] color_count = new int[7]; // 예시
 
     Rigidbody rb;
     public float power = 30f;
@@ -75,9 +75,13 @@ public class Player : MonoBehaviour
     //테스트-----------------
     void Color_Init()
     {
-        color_count[0] = 1;
-        color_count[1] = 0;
+        color_count[0] = 0;
+        color_count[1] = 1;
         color_count[2] = 2;
+        color_count[3] = 3;
+        color_count[4] = 4;
+        color_count[5] = 5;
+        color_count[6] = 6;
     }
     //----------------------
     public void ColorChange(int color) // 색상을 숫자로 규정하기 
@@ -85,28 +89,27 @@ public class Player : MonoBehaviour
         switch (color)
         {
             case 0:
-                playerColor.material.color = Color.red;
+                playerColor.material.color = Color.red; // 빨
                 break;
             case 1:
-                playerColor.material.color = Color.green;
+                playerColor.material.color = new Color(255/255f , 140/255f, 0/255f); // 주 (노란색이랑 구분불가라 다크오렌지로변경)
                 break;
             case 2:
-                playerColor.material.color = Color.blue;
+                playerColor.material.color = Color.yellow;// 노
                 break;
-            //case 3:
-            //    break;
-            //case 4:
-            //    break;
-            //case 5:
-            //    break;
-            //case 6:
-            //    break;
-            //case 7:
-            //    break;
-            //case 8:
-            //    break;
-            //case 9:
-            //    break;
+            case 3:
+                playerColor.material.color = Color.green;//초
+                break;
+            case 4:
+                playerColor.material.color = new Color(0 / 255f, 191 / 255f, 255 / 255f);//파 (남색 구분을위해  Deep Sky Blue 로 변경)
+                break;
+            case 5:
+                playerColor.material.color = new Color(0 / 255f, 0 / 255f, 128 / 255f);//남
+                break;
+            case 6:
+                playerColor.material.color = new Color(128 / 255f, 0 / 255f, 128 / 255f);//보
+                break;
+
             default:
                 break;
         }
@@ -147,14 +150,15 @@ public class Player : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         if (currTime > limitTime)
         {
-            //int i = 0;
-            ColorChange(color_count[count]);
             count++;
-            if (count >= 3)
+            if (count > 6)
                 count = 0;
-
+            
+            if(count < 7)
+            ColorChange(color_count[count]);
+                      
             currTime = 0;
-
+            
         }
 
         if (teleportButton == true)
