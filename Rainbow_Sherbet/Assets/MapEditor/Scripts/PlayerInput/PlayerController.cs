@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
             {
                 //클릭된 블럭의 정보를 갖고와 Pos를 통해 배열의 위치 찾음
                 BlockInfo blockInfo = hit.transform.gameObject.GetComponent<BlockInfo>();
-                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * 10);
+                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * (int)mapEditManager.mapSize.x);
 
                 //string 부분 변경후 블럭생성
                 mapEditManager.mapBlocks[blockNum] = mapEditManager.selectedBlock;
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
             {
                 //클릭된 블럭의 정보를 갖고와 Pos를 통해 배열의 위치 찾음
                 BlockInfo blockInfo = hit.transform.gameObject.GetComponent<BlockInfo>();
-                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * 10);
+                int blockNum = (int)(blockInfo.Pos.x + blockInfo.Pos.y * (int)mapEditManager.mapSize.x);
 
                 //string 부분 변경후 블럭생성
                 mapEditManager.mapBlocks[blockNum] = "NULL";

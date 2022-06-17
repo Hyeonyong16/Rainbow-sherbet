@@ -47,7 +47,30 @@ public class UIButtonManager : MonoBehaviour
                     
                     string temp = "CB" + "0" + i.ToString();
                     btns[i].gameObject.GetComponent<BtnScripts>().currentBtnBlock = temp;
-                    btns[i].gameObject.GetComponent<BtnScripts>().text.text = temp;
+                    switch(i)
+                    {
+                        case 0:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "RED";
+                            break;
+                        case 1:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "ORANGE";
+                            break;
+                        case 2:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "YELLOW";
+                            break;
+                        case 3:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "GREEN";
+                            break;
+                        case 4:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "BLUE";
+                            break;
+                        case 5:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "NAVY";
+                            break;
+                        case 6:
+                            btns[i].gameObject.GetComponent<BtnScripts>().text.text = "PURPLE";
+                            break;
+                    }
                     btns[i].gameObject.GetComponent<BtnScripts>().SetOnClickEvent();
                 }
 
