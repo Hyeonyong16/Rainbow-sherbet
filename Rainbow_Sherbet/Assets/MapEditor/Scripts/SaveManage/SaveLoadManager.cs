@@ -70,4 +70,5 @@ public class SaveLoadManager : MonoBehaviour
 
         mapEditManager.InitMap(mapData);
     }
+
 }
