@@ -6,28 +6,64 @@ public class Player : MonoBehaviour
 {
     Renderer playerColor;
 
-    public float moveSpeed;
-    public float currTime;
+    public float moveSpeed =30f;
+    public float currTime; // 지금흐르는시간
+    public float limitTime = 1.2f; // 색상이 바뀌는 제한시간
+
     public GameObject teleport; 
 
     public int count;
     public bool teleportButton = false;
     public bool teleportButton2 = false;
     private Vector3 targetPos;
+    private Vector3 goPos;
     public Vector3 teleportPos;
     public int[] color_count = new int[3]; // 예시
 
+    Rigidbody rb;
+    public float power = 30f;
     private void Start()
     {
         targetPos = transform.position;
         teleportPos = teleport.gameObject.transform.position;
         playerColor = gameObject.GetComponent<Renderer>();
         Color_Init();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    public void Move(Vector3 moveDirection)
+    public void Move(int moveDirection)
     {
-        targetPos += moveDirection;
+        //targetPos += moveDirection;
+        switch (moveDirection)
+        {   case 0: // 앞으로
+                goPos.x = targetPos.x;
+                goPos.y = targetPos.y;
+                goPos.z = targetPos.z + 1;
+                targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
+                break;
+            case 1: //뒤로
+                goPos.x = targetPos.x;
+                goPos.y = targetPos.y;
+                goPos.z = targetPos.z - 1;
+                targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
+                break;
+            case 2: //오른쪽
+                goPos.x = targetPos.x +1;
+                goPos.y = targetPos.y;
+                goPos.z = targetPos.z;
+                targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
+                break;
+            case 3: //왼쪽
+                goPos.x = targetPos.x - 1;
+                goPos.y = targetPos.y;
+                goPos.z = targetPos.z;
+                targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
+                break;
+            default:
+                break;
+        }
+       // transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed );
+
     }
 
     public void Rotation(float angle)
@@ -83,6 +119,20 @@ public class Player : MonoBehaviour
             teleportButton = true;
             Debug.Log("teleport check");
         }
+
+        if (coll.gameObject.tag == "Turtle")
+        {
+            limitTime = 2.0f;
+            Debug.Log("Oops turtle!");
+
+        }
+
+        if (coll.gameObject.tag == "Rabbit")
+        {
+            limitTime = 0.8f;
+            Debug.Log("Wow Rabbit");
+
+        }
     }
 
 
@@ -91,9 +141,10 @@ public class Player : MonoBehaviour
     {
         currTime += Time.deltaTime;
 
+        //rb.AddForce(Vector3.forward * power);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-        if (currTime > 1.2f)
+        if (currTime > limitTime)
         {
             //int i = 0;
             ColorChange(color_count[count]);

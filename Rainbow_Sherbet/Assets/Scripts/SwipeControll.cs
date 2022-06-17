@@ -72,7 +72,8 @@ public class SwipeControll : MonoBehaviour
                 cameraCon.Move(Vector3.forward);
                 fingerDown = false;
                 Debug.Log("Swipe Up");
-                player.Move(Vector3.forward);
+                //player.Move(Vector3.forward);
+                player.Move(0);
                 player.Rotation(0);
 
             }
@@ -81,7 +82,8 @@ public class SwipeControll : MonoBehaviour
                 cameraCon.Move(Vector3.back);
                 fingerDown = false;
                 Debug.Log("Swipe Down");
-                player.Move(Vector3.back);
+                //player.Move(Vector3.back);
+                player.Move(1);
                 player.Rotation(180);
 
             }
@@ -90,7 +92,8 @@ public class SwipeControll : MonoBehaviour
                 cameraCon.Move(Vector3.right);
                 fingerDown = false;
                 Debug.Log("Swipe right");
-                player.Move(Vector3.right);
+                //player.Move(Vector3.right);
+                player.Move(2);
                 player.Rotation(90);
 
             }
@@ -99,7 +102,8 @@ public class SwipeControll : MonoBehaviour
                 cameraCon.Move(Vector3.left);
                 fingerDown = false;
                 Debug.Log("Swipe left");
-                player.Move(Vector3.left);
+                //player.Move(Vector3.left);
+                player.Move(3);
                 player.Rotation(-90);
 
             }
