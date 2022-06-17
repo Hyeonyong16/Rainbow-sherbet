@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraControll : MonoBehaviour
 {
     public Vector3 cameraPos;
+    public Player player; // 플레이어 코드
 
 
     void Start()
@@ -12,14 +13,25 @@ public class CameraControll : MonoBehaviour
         cameraPos = transform.position;
     }
 
-    public void Move(Vector3 moveDirection)
+    public void Move()
     {
-        cameraPos += moveDirection;
+        cameraPos = new Vector3(player.targetPos.x, player.targetPos.y + 1.0f, player.targetPos.z - 10.0f);
         transform.position = cameraPos;
+        //if (player.teleportButton)
+        //{
+        //    cameraPos = new Vector3(player.targetPos.x, player.targetPos.y + 1.0f, player.targetPos.z - 10.0f);
+        //    transform.position = cameraPos;
+        //}
+        //else
+        //{
+        //    cameraPos += moveDirection;
+        //    transform.position = cameraPos;
+        //}
     }
 
     void Update()
     {
-        
+        //cameraPos = new Vector3(player.targetPos.x, player.targetPos.y + 1.0f, player.targetPos.z - 10.0f);
+        //transform.position = cameraPos;
     }
 }

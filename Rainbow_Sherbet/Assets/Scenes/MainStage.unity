@@ -998,6 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fefe7da43b1b734a93e8da005b1f68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraCon: {fileID: 1357186003}
   moveSpeed: 100
   currTime: 0
   limitTime: 1.2
@@ -1005,6 +1006,7 @@ MonoBehaviour:
   count: 0
   teleportButton: 0
   teleportButton2: 0
+  targetPos: {x: 0, y: 0, z: 0}
   teleportPos: {x: 0, y: 0, z: 0}
   color_count: 000000000000000000000000
   power: 30
@@ -1167,6 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 1251636852}
 --- !u!1 &1385275276
 GameObject:
   m_ObjectHideFlags: 0

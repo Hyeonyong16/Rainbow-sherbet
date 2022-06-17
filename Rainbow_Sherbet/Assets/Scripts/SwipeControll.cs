@@ -69,42 +69,38 @@ public class SwipeControll : MonoBehaviour
         {
             if (Input.mousePosition.y >= startPos.y + pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.forward);
+                player.Move(Vector3.forward);
+                cameraCon.Move();              
+                player.Rotation(0);                    
                 fingerDown = false;
-                Debug.Log("Swipe Up");
-                //player.Move(Vector3.forward);
-                player.Move(0);
-                player.Rotation(0);
+                Debug.Log("Swipe Up");              
 
             }
             else if (Input.mousePosition.y <= startPos.y - pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.back);
-                fingerDown = false;
-                Debug.Log("Swipe Down");
-                //player.Move(Vector3.back);
-                player.Move(1);
+                player.Move(Vector3.back);
+                cameraCon.Move();
                 player.Rotation(180);
+                fingerDown = false;
+                Debug.Log("Swipe Down");              
 
             }
             else if (Input.mousePosition.x >= startPos.x + pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.right);
-                fingerDown = false;
-                Debug.Log("Swipe right");
-                //player.Move(Vector3.right);
-                player.Move(2);
+                player.Move(Vector3.right);
+                cameraCon.Move();
                 player.Rotation(90);
+                fingerDown = false;
+                Debug.Log("Swipe right");           
 
             }
             else if (Input.mousePosition.x <= startPos.x - pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.left);
-                fingerDown = false;
-                Debug.Log("Swipe left");
-                //player.Move(Vector3.left);
-                player.Move(3);
+                player.Move(Vector3.left);
+                cameraCon.Move();
                 player.Rotation(-90);
+                fingerDown = false;
+                Debug.Log("Swipe left");             
 
             }
 

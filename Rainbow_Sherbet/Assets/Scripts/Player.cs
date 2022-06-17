@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public CameraControll cameraCon;
     Renderer playerColor;
 
     public float moveSpeed =30f;
@@ -15,7 +16,7 @@ public class Player : MonoBehaviour
     public int count;
     public bool teleportButton = false;
     public bool teleportButton2 = false;
-    private Vector3 targetPos;
+    public Vector3 targetPos;
     private Vector3 goPos;
     public Vector3 teleportPos;
     public int[] color_count = new int[3]; // 예시
@@ -31,37 +32,37 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    public void Move(int moveDirection)
+    public void Move(Vector3 moveDirection)
     {
-        //targetPos += moveDirection;
-        switch (moveDirection)
-        {   case 0: // 앞으로
-                goPos.x = targetPos.x;
-                goPos.y = targetPos.y;
-                goPos.z = targetPos.z + 1;
-                targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
-                break;
-            case 1: //뒤로
-                goPos.x = targetPos.x;
-                goPos.y = targetPos.y;
-                goPos.z = targetPos.z - 1;
-                targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
-                break;
-            case 2: //오른쪽
-                goPos.x = targetPos.x +1;
-                goPos.y = targetPos.y;
-                goPos.z = targetPos.z;
-                targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
-                break;
-            case 3: //왼쪽
-                goPos.x = targetPos.x - 1;
-                goPos.y = targetPos.y;
-                goPos.z = targetPos.z;
-                targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
-                break;
-            default:
-                break;
-        }
+        targetPos += moveDirection;
+        //switch (moveDirection)
+        //{   case 0: // 앞으로
+        //        goPos.x = targetPos.x;
+        //        goPos.y = targetPos.y;
+        //        goPos.z = targetPos.z + 1;
+        //        targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
+        //        break;
+        //    case 1: //뒤로
+        //        goPos.x = targetPos.x;
+        //        goPos.y = targetPos.y;
+        //        goPos.z = targetPos.z - 1;
+        //        targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
+        //        break;
+        //    case 2: //오른쪽
+        //        goPos.x = targetPos.x +1;
+        //        goPos.y = targetPos.y;
+        //        goPos.z = targetPos.z;
+        //        targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
+        //        break;
+        //    case 3: //왼쪽
+        //        goPos.x = targetPos.x - 1;
+        //        goPos.y = targetPos.y;
+        //        goPos.z = targetPos.z;
+        //        targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
+        //        break;
+        //    default:
+        //        break;
+        //}
        // transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed );
 
     }
@@ -159,7 +160,11 @@ public class Player : MonoBehaviour
         if (teleportButton == true)
         {            
             targetPos = new Vector3(teleportPos.x, teleportPos.y + 1f, teleportPos.z);
-            transform.position = targetPos;         
+            transform.position = targetPos;
+
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+
             teleportButton = false;
         }
 
