@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSize: 1
-  mapSize: {x: 10, y: 25}
+  mapSize: {x: 11, y: 20}
   parentObject: {fileID: 2114826665}
   uIButtonManager: {fileID: 1733896951}
   saveLoadManager: {fileID: 970863088}

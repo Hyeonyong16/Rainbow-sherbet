@@ -48,8 +48,8 @@ public class MapEditManager : MonoBehaviour
         if (parentObject.transform.childCount != 0) return;
         for(int i = 0; i < mapBlocks.Length; i++)
         {
-            int x = (i % 10);
-            int y = (i / 10);
+            int x = (i % (int)mapSize.x);
+            int y = (i / (int)mapSize.x);
             Vector3 pos = new Vector3(x * blockSize, 0, y * blockSize);
 
             //喉钒 积己
@@ -68,8 +68,8 @@ public class MapEditManager : MonoBehaviour
 
     public void CreateBlock(int num)
     {
-        int x = (num % 10);
-        int y = (num / 10);
+        int x = (num % (int)mapSize.x);
+        int y = (num / (int)mapSize.x);
         Vector3 pos = new Vector3(x * blockSize, 0, y * blockSize);
 
         //喉钒 积己
