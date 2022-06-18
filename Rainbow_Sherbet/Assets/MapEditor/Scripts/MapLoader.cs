@@ -76,7 +76,7 @@ public class MapLoader : MonoBehaviour
                     Vector3.zero,
                     Quaternion.identity
                     ) as GameObject;
-                go.gameObject.tag = "Blocks";
+
                 go.GetComponent<BlockInfo>().SetBlockPos(new Vector2(pos.x, pos.z));
                 go.transform.parent = parentObject.transform;
                 gameManager.BlocksArray[i] = go;
