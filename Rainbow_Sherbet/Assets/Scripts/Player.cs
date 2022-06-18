@@ -236,6 +236,7 @@ public class Player : MonoBehaviour
         if (coll.gameObject.tag == "Blocks")
         {
             //실패창 넣기 
+            Debug.Log("YOU DIE!!!!!!!!");
         }
 
     }
