@@ -178,8 +178,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6353967658424704360, guid: 52e54b7ecf4066d4eaf12a0cf21f84cf, type: 3}
+      propertyPath: cameraCon
+      value: 
+      objectReference: {fileID: 450299480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e54b7ecf4066d4eaf12a0cf21f84cf, type: 3}
+--- !u!114 &283591414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6353967658424704360, guid: 52e54b7ecf4066d4eaf12a0cf21f84cf, type: 3}
+  m_PrefabInstance: {fileID: 283591413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9188dc8e3ca31e04fb2d73396c77f307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &450299476
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +206,7 @@ GameObject:
   - component: {fileID: 450299479}
   - component: {fileID: 450299478}
   - component: {fileID: 450299477}
+  - component: {fileID: 450299480}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -263,6 +279,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450299480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450299476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4020f8b69e7906347a78d7afe380c1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 283591414}
 --- !u!1001 &735522811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +708,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5013471313837581963, guid: 1fa8b943e6ca13744b4f8d4181757d88, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 283591414}
+    - target: {fileID: 5013471313837581963, guid: 1fa8b943e6ca13744b4f8d4181757d88, type: 3}
+      propertyPath: cameraCon
+      value: 
+      objectReference: {fileID: 450299480}
     - target: {fileID: 5754148281679914955, guid: 1fa8b943e6ca13744b4f8d4181757d88, type: 3}
       propertyPath: m_Name
       value: GameManager

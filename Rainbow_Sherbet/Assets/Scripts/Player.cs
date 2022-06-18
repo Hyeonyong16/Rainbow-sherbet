@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public CameraControll cameraCon;
     Renderer playerColor;
+    public Animator ani;
 
     public float moveSpeed =30f;
     public float currTime; // 지금흐르는시간
@@ -14,7 +15,6 @@ public class Player : MonoBehaviour
     public GameObject teleport;
     public GameObject teleport2;
     public GameObject teleport3;
-    public GameObject teleport4;
 
     public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
     public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public float power = 30f;
     private void Start()
     {
+        ani = GetComponent<Animator>();
         playerColor = gameObject.GetComponent<Renderer>();
         rb = gameObject.GetComponent<Rigidbody>();
         InitPos();
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     public void Move(Vector3 moveDirection)
     {
         targetPos += moveDirection;
+        ani.SetBool("move", true);
         //switch (moveDirection)
         //{   case 0: // 앞으로
         //        goPos.x = targetPos.x;
@@ -190,16 +192,7 @@ public class Player : MonoBehaviour
             cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
             cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
-        }
-
-        else if (coll.gameObject.tag == "Teleport4")
-        {
-            targetPos = new Vector3(teleport4.gameObject.transform.position.x, teleport4.gameObject.transform.position.y + 1f, teleport4.gameObject.transform.position.z);
-            transform.position = targetPos;
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
-            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
-            Debug.Log("teleport check");
-        }
+        }    
 
         if (coll.gameObject.tag == "Turtle")
         {
@@ -217,7 +210,7 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "Star")
         {
-            GameManagerUI._instance.stageNumStars++;                     
+            //GameManagerUI._instance.stageNumStars++;                     
             Destroy(coll.gameObject);
             Debug.Log("Get Star~~");
         }
