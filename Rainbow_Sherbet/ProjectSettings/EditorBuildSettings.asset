@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/YBH/Blacknwhite/Assets/Scenes/Title.unity
+    path: Assets/Scenes/Title.unity
     guid: 4db9d2d1b1c78494dad0c97a953fafe6
   - enabled: 1
-    path: Assets/YBH/Blacknwhite/Assets/Scenes/Stage_select.unity
+    path: Assets/Scenes/Stage_select.unity
     guid: fed0487f319b276429ea179c5851928a
   - enabled: 1
     path: Assets/Scenes/Stage/Stage1.unity
