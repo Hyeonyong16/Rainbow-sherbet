@@ -7,6 +7,10 @@ TagManager:
   - Teleport
   - Turtle
   - Rabbit
+  - Teleport2
+  - Teleport3
+  - Teleport4
+  - Blocks
   layers:
   - Default
   - TransparentFX

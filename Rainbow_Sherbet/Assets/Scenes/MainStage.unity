@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 235234423}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Teleport
+  m_TagString: Blocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1003,11 +1003,12 @@ MonoBehaviour:
   currTime: 0
   limitTime: 2
   teleport: {fileID: 421085230}
+  teleport2: {fileID: 0}
+  teleport3: {fileID: 0}
+  teleport4: {fileID: 0}
   count: -1
-  teleportButton: 0
-  teleportButton2: 0
+  colorLimitCount: 6
   targetPos: {x: 0, y: 0, z: 0}
-  teleportPos: {x: 0, y: 0, z: 0}
   color_count: 00000000000000000000000000000000000000000000000000000000
   power: 30
 --- !u!54 &1251636853
@@ -1184,7 +1185,7 @@ GameObject:
   - component: {fileID: 1385275277}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Blocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

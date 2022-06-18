@@ -12,24 +12,28 @@ public class Player : MonoBehaviour
     public float limitTime = 1.2f; // 색상이 바뀌는 제한시간 (Default value : 1.2f)
 
     public GameObject teleport;
+    public GameObject teleport2;
+    public GameObject teleport3;
+    public GameObject teleport4;
 
-    public int count = -1;
-    public bool teleportButton = false;
-    public bool teleportButton2 = false;
+    public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
+    public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
+
+   
     public Vector3 targetPos;
     private Vector3 goPos;
-    public Vector3 teleportPos;
+    
     public int[] color_count = new int[7]; // 예시
 
     Rigidbody rb;
     public float power = 30f;
     private void Start()
     {
-        targetPos = transform.position;
-        teleportPos = teleport.gameObject.transform.position;
         playerColor = gameObject.GetComponent<Renderer>();
-        Color_Init();
         rb = gameObject.GetComponent<Rigidbody>();
+        InitPos();
+        Color_Init();
+        //InitColorLimit(); //추후 해금
     }
 
     public void Move(Vector3 moveDirection)
@@ -72,7 +76,51 @@ public class Player : MonoBehaviour
         this.transform.localEulerAngles = new Vector3(0,angle,0);
     }
 
-    //테스트-----------------
+    void InitColorLimit()
+    {
+        switch (GameManagerUI._instance.stageNum)
+        {
+            case 1:
+                colorLimitCount = 2;
+                break;
+            case 2:
+                colorLimitCount = 2;
+                break;
+            case 3:
+                colorLimitCount = 3;
+                break;
+            case 4:
+                colorLimitCount = 4;
+                break;
+            case 5:
+                colorLimitCount = 4;
+                break;
+            case 6:
+                colorLimitCount = 5;
+                break;
+            case 7:
+                colorLimitCount = 5;
+                break;
+            case 8:
+                colorLimitCount = 6;
+                break;
+            case 9:
+                colorLimitCount = 7;
+                break;
+            case 10:
+                colorLimitCount = 7;
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    void InitPos()
+    {
+        targetPos = transform.position;
+    }
+
     void Color_Init()
     {
         color_count[0] = 0;
@@ -83,7 +131,7 @@ public class Player : MonoBehaviour
         color_count[5] = 5;
         color_count[6] = 6;
     }
-    //----------------------
+
     public void ColorChange(int color) // 색상을 숫자로 규정하기 
     {
         switch (color)
@@ -101,7 +149,7 @@ public class Player : MonoBehaviour
                 playerColor.material.color = Color.green;//초
                 break;
             case 4:
-                playerColor.material.color = new Color(0 / 255f, 191 / 255f, 255 / 255f);//파 (남색 구분을위해  Deep Sky Blue 로 변경)
+                playerColor.material.color =Color.blue;//파 (남색 구분을위해  Deep Sky Blue 로 변경)
                 break;
             case 5:
                 playerColor.material.color = new Color(0 / 255f, 0 / 255f, 128 / 255f);//남
@@ -120,7 +168,36 @@ public class Player : MonoBehaviour
     {
         if (coll.gameObject.tag == "Teleport")
         {
-            teleportButton = true;
+            targetPos = new Vector3(teleport.gameObject.transform.position.x, teleport.gameObject.transform.position.y + 1f, teleport.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+        else if (coll.gameObject.tag == "Teleport2")
+        {
+            targetPos = new Vector3(teleport2.gameObject.transform.position.x, teleport2.gameObject.transform.position.y + 1f, teleport2.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+
+        else if (coll.gameObject.tag == "Teleport3")
+        {
+            targetPos = new Vector3(teleport3.gameObject.transform.position.x, teleport3.gameObject.transform.position.y + 1f, teleport3.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+
+        else if (coll.gameObject.tag == "Teleport4")
+        {
+            targetPos = new Vector3(teleport4.gameObject.transform.position.x, teleport4.gameObject.transform.position.y + 1f, teleport4.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
         }
 
@@ -137,6 +214,23 @@ public class Player : MonoBehaviour
             Debug.Log("Wow Rabbit");
 
         }
+
+        if (coll.gameObject.tag == "Star")
+        {
+            GameManagerUI._instance.stageNumStars++;                     
+            Destroy(coll.gameObject);
+            Debug.Log("Get Star~~");
+        }
+
+
+        if (coll.gameObject.tag == "Blocks")
+        {
+            if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
+            {
+                Debug.Log("No Matches!!!");
+            }
+        }
+
     }
 
 
@@ -151,25 +245,13 @@ public class Player : MonoBehaviour
         if (currTime > limitTime)
         {
             count++;
-            if (count > 6)
+            if (count > colorLimitCount)
                 count = 0;
-            
-            if(count < 7)
+
             ColorChange(color_count[count]);
                       
             currTime = 0;
             
-        }
-
-        if (teleportButton == true)
-        {            
-            targetPos = new Vector3(teleportPos.x, teleportPos.y + 1f, teleportPos.z);
-            transform.position = targetPos;
-
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
-            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
-
-            teleportButton = false;
         }
 
     }
