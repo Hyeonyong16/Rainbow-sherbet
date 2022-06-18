@@ -174,7 +174,8 @@ public class Player : MonoBehaviour
         {
             targetPos = new Vector3(teleport.gameObject.transform.position.x, teleport.gameObject.transform.position.y + 1f, teleport.gameObject.transform.position.z);
             transform.position = targetPos;
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.transform.localEulerAngles = new Vector3(12, 0, 0);
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 5.0f, targetPos.z - 10.0f);
             cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
         }
@@ -182,7 +183,8 @@ public class Player : MonoBehaviour
         {
             targetPos = new Vector3(teleport2.gameObject.transform.position.x, teleport2.gameObject.transform.position.y + 1f, teleport2.gameObject.transform.position.z);
             transform.position = targetPos;
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.transform.localEulerAngles = new Vector3(12, 0, 0);
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 5.0f, targetPos.z - 10.0f);
             cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
         }
@@ -191,7 +193,8 @@ public class Player : MonoBehaviour
         {
             targetPos = new Vector3(teleport3.gameObject.transform.position.x, teleport3.gameObject.transform.position.y + 1f, teleport3.gameObject.transform.position.z);
             transform.position = targetPos;
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.transform.localEulerAngles = new Vector3(12, 0, 0);
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 5.0f, targetPos.z - 10.0f);
             cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
         }    

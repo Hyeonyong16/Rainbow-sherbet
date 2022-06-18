@@ -15,7 +15,8 @@ public class CameraControll : MonoBehaviour
 
     public void Move()
     {
-        cameraPos = new Vector3(player.targetPos.x, player.targetPos.y + 1.0f, player.targetPos.z - 10.0f);
+        this.transform.localEulerAngles = new Vector3(12, 0, 0);
+        cameraPos = new Vector3(player.targetPos.x, player.targetPos.y + 5.0f, player.targetPos.z - 10.0f);
         transform.position = cameraPos;
         //if (player.teleportButton)
         //{
