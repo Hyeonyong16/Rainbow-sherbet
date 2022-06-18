@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
     public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
 
-   
+    public bool ch = false;
     public Vector3 targetPos;
     private Vector3 goPos;
     
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     {
         targetPos += moveDirection;
         ani.SetBool("move", true);
+        ch = true;
         //switch (moveDirection)
         //{   case 0: // 앞으로
         //        goPos.x = targetPos.x;
@@ -75,7 +76,8 @@ public class Player : MonoBehaviour
 
     public void Rotation(float angle)
     {
-        this.transform.localEulerAngles = new Vector3(0,angle,0);
+        this.transform.localEulerAngles = new Vector3(-90,angle,0);
+        Debug.Log("aaaaa1321313");
     }
 
     void InitColorLimit()
@@ -226,6 +228,15 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnTriggerExit(Collider coll)
+    {
+        if (coll.gameObject.tag == "Blocks")
+        {
+            //실패창 넣기 
+        }
+
+    }
+
 
 
     private void Update()
@@ -247,5 +258,10 @@ public class Player : MonoBehaviour
             
         }
 
+        if (ch)
+        {
+            ani.SetBool("move", false);
+            ch = false;
+        }
     }
 }
