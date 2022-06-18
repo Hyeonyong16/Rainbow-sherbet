@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
                 playerColor.material.color = Color.green;//초
                 break;
             case 4:
-                playerColor.material.color = new Color(0 / 255f, 191 / 255f, 255 / 255f);//파 (남색 구분을위해  Deep Sky Blue 로 변경)
+                playerColor.material.color =Color.blue;//파 (남색 구분을위해  Deep Sky Blue 로 변경)
                 break;
             case 5:
                 playerColor.material.color = new Color(0 / 255f, 0 / 255f, 128 / 255f);//남
@@ -217,9 +217,20 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "Star")
         {
-            GameManagerUI._instance.stageNumStars++;
+            GameManagerUI._instance.stageNumStars++;                     
+            Destroy(coll.gameObject);
             Debug.Log("Get Star~~");
         }
+
+
+        if (coll.gameObject.tag == "Blocks")
+        {
+            if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
+            {
+                Debug.Log("No Matches!!!");
+            }
+        }
+
     }
 
 
