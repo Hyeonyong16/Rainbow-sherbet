@@ -21,6 +21,6 @@ public class GameManagerUI : MonoBehaviour
     //별 관련 변수추가
     public int stageNumStars = 0; // 스테이지별 총 별개수 - MAX : 3
     public int totalNumStars = 0; // 스테이지 1에서 스테이지  10까지 총 별개수 - MAX :30
-
+    public int colorLimitCount = 0;// 스테이지별 색상제한 변수
 
 }

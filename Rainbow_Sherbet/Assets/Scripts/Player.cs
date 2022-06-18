@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject teleport3;
 
     public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
-    public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
+    //public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
 
     public bool ch = false;
     public Vector3 targetPos;
@@ -41,36 +41,7 @@ public class Player : MonoBehaviour
     {
         targetPos += moveDirection;
         ani.SetBool("move", true);
-        ch = true;
-        //switch (moveDirection)
-        //{   case 0: // 앞으로
-        //        goPos.x = targetPos.x;
-        //        goPos.y = targetPos.y;
-        //        goPos.z = targetPos.z + 1;
-        //        targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
-        //        break;
-        //    case 1: //뒤로
-        //        goPos.x = targetPos.x;
-        //        goPos.y = targetPos.y;
-        //        goPos.z = targetPos.z - 1;
-        //        targetPos = Vector3.MoveTowards(targetPos, goPos, moveSpeed );
-        //        break;
-        //    case 2: //오른쪽
-        //        goPos.x = targetPos.x +1;
-        //        goPos.y = targetPos.y;
-        //        goPos.z = targetPos.z;
-        //        targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
-        //        break;
-        //    case 3: //왼쪽
-        //        goPos.x = targetPos.x - 1;
-        //        goPos.y = targetPos.y;
-        //        goPos.z = targetPos.z;
-        //        targetPos = Vector3.MoveTowards(transform.position, goPos, moveSpeed );
-        //        break;
-        //    default:
-        //        break;
-        //}
-       // transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed );
+        ch = true;    
 
     }
 
@@ -78,47 +49,7 @@ public class Player : MonoBehaviour
     {
         this.transform.localEulerAngles = new Vector3(-90,angle,0);
         Debug.Log("aaaaa1321313");
-    }
-
-    void InitColorLimit()
-    {
-        switch (GameManagerUI._instance.stageNum)
-        {
-            case 1:
-                colorLimitCount = 2;
-                break;
-            case 2:
-                colorLimitCount = 2;
-                break;
-            case 3:
-                colorLimitCount = 3;
-                break;
-            case 4:
-                colorLimitCount = 4;
-                break;
-            case 5:
-                colorLimitCount = 4;
-                break;
-            case 6:
-                colorLimitCount = 5;
-                break;
-            case 7:
-                colorLimitCount = 5;
-                break;
-            case 8:
-                colorLimitCount = 6;
-                break;
-            case 9:
-                colorLimitCount = 7;
-                break;
-            case 10:
-                colorLimitCount = 7;
-                break;
-            default:
-                break;
-        }
-
-    }
+    }  
 
     void InitPos()
     {
@@ -253,7 +184,7 @@ public class Player : MonoBehaviour
         if (currTime > limitTime)
         {
             count++;
-            if (count > colorLimitCount)
+            if (count > 6)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
                 count = 0;
 
             ColorChange(color_count[count]);
