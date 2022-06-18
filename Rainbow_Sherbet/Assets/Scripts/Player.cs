@@ -12,15 +12,17 @@ public class Player : MonoBehaviour
     public float limitTime = 1.2f; // 색상이 바뀌는 제한시간 (Default value : 1.2f)
 
     public GameObject teleport;
+    public GameObject teleport2;
+    public GameObject teleport3;
+    public GameObject teleport4;
 
     public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
     public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
 
-    public bool teleportButton = false;
-    public bool teleportButton2 = false;
+   
     public Vector3 targetPos;
     private Vector3 goPos;
-    public Vector3 teleportPos;
+    
     public int[] color_count = new int[7]; // 예시
 
     Rigidbody rb;
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         InitPos();
         Color_Init();
-        InitColorLimit();
+        //InitColorLimit(); //추후 해금
     }
 
     public void Move(Vector3 moveDirection)
@@ -117,7 +119,6 @@ public class Player : MonoBehaviour
     void InitPos()
     {
         targetPos = transform.position;
-        teleportPos = teleport.gameObject.transform.position;
     }
 
     void Color_Init()
@@ -167,7 +168,36 @@ public class Player : MonoBehaviour
     {
         if (coll.gameObject.tag == "Teleport")
         {
-            teleportButton = true;
+            targetPos = new Vector3(teleport.gameObject.transform.position.x, teleport.gameObject.transform.position.y + 1f, teleport.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+        else if (coll.gameObject.tag == "Teleport2")
+        {
+            targetPos = new Vector3(teleport2.gameObject.transform.position.x, teleport2.gameObject.transform.position.y + 1f, teleport2.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+
+        else if (coll.gameObject.tag == "Teleport3")
+        {
+            targetPos = new Vector3(teleport3.gameObject.transform.position.x, teleport3.gameObject.transform.position.y + 1f, teleport3.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
+            Debug.Log("teleport check");
+        }
+
+        else if (coll.gameObject.tag == "Teleport4")
+        {
+            targetPos = new Vector3(teleport4.gameObject.transform.position.x, teleport4.gameObject.transform.position.y + 1f, teleport4.gameObject.transform.position.z);
+            transform.position = targetPos;
+            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
+            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
             Debug.Log("teleport check");
         }
 
@@ -211,17 +241,6 @@ public class Player : MonoBehaviour
                       
             currTime = 0;
             
-        }
-
-        if (teleportButton == true)
-        {            
-            targetPos = new Vector3(teleportPos.x, teleportPos.y + 1f, teleportPos.z);
-            transform.position = targetPos;
-
-            cameraCon.cameraPos = new Vector3(targetPos.x, targetPos.y + 1.0f, targetPos.z - 10.0f);
-            cameraCon.gameObject.transform.position = cameraCon.cameraPos;
-
-            teleportButton = false;
         }
 
     }
