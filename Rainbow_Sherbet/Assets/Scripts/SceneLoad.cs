@@ -9,72 +9,72 @@ public class SceneLoad : MonoBehaviour
     {
         GameManagerUI._instance.stageNumStars = 0;
         GameManagerUI._instance.stageNum++;
-        string sceneName = "Stage"+ GameManagerUI._instance.stageNum.ToString();
+        string sceneName = "Stage" + GameManagerUI._instance.stageNum.ToString();
         SceneManager.LoadScene(sceneName);
     }
 
-    void LoadStageSelect()
+    public void LoadStageSelect()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage_select");
     }
 
-    void LoadStage1()
+    public void LoadStage1()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage1");
     }
 
-    void LoadStage2()
+    public void LoadStage2()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage2");
     }
 
-    void LoadStage3()
+    public void LoadStage3()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage3");
     }
 
-    void LoadStage4()
+    public void LoadStage4()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage4");
     }
 
-    void LoadStage5()
+    public void LoadStage5()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage5");
     }
 
-    void LoadStage6()
+    public void LoadStage6()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage6");
     }
 
-    void LoadStage7()
+    public void LoadStage7()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage7");
     }
 
 
-    void LoadStage8()
+    public void LoadStage8()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage8");
     }
 
-    void LoadStage9()
+    public void LoadStage9()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage9");
     }
 
-    void LoadStage10()
+    public void LoadStage10()
     {
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage10");

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
 {
+    public GameObject SettingScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +17,13 @@ public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
         
     }
 
-    void OnSetting()
+   public void OnSetting()
     {
-    
+        SettingScreen.SetActive(true);        
     }
 
-    void OffSetting()
-    { 
-    
+    public void OffSetting()
+    {
+        SettingScreen.SetActive(false);
     }
 }
