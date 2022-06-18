@@ -13,7 +13,9 @@ public class Player : MonoBehaviour
 
     public GameObject teleport;
 
-    public int count = -1;
+    public int count = -1; // 바로 증가하여 0부터 시작해 인덱스0번부터 색상 보여줌
+    public int colorLimitCount = 0; // 스테이지별 컬러 제한을 위한 변수
+
     public bool teleportButton = false;
     public bool teleportButton2 = false;
     public Vector3 targetPos;
@@ -137,6 +139,12 @@ public class Player : MonoBehaviour
             Debug.Log("Wow Rabbit");
 
         }
+
+        if (coll.gameObject.tag == "Star")
+        {
+            //별획득시 별개수를 올려주는 변수 추가 부분
+            Debug.Log("Get Star~~");
+        }
     }
 
 
@@ -151,10 +159,9 @@ public class Player : MonoBehaviour
         if (currTime > limitTime)
         {
             count++;
-            if (count > 6)
+            if (count > colorLimitCount)
                 count = 0;
-            
-            if(count < 7)
+
             ColorChange(color_count[count]);
                       
             currTime = 0;

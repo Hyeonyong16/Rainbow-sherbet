@@ -1004,6 +1004,7 @@ MonoBehaviour:
   limitTime: 2
   teleport: {fileID: 421085230}
   count: -1
+  colorLimitCount: 6
   teleportButton: 0
   teleportButton2: 0
   targetPos: {x: 0, y: 0, z: 0}
