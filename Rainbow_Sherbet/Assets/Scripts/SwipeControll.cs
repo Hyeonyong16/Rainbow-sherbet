@@ -69,38 +69,38 @@ public class SwipeControll : MonoBehaviour
         {
             if (Input.mousePosition.y >= startPos.y + pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.forward);
-                fingerDown = false;
-                Debug.Log("Swipe Up");
                 player.Move(Vector3.forward);
-                player.Rotation(0);
+                cameraCon.Move();              
+                player.Rotation(0);                    
+                fingerDown = false;
+                Debug.Log("Swipe Up");              
 
             }
             else if (Input.mousePosition.y <= startPos.y - pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.back);
-                fingerDown = false;
-                Debug.Log("Swipe Down");
                 player.Move(Vector3.back);
+                cameraCon.Move();
                 player.Rotation(180);
+                fingerDown = false;
+                Debug.Log("Swipe Down");              
 
             }
             else if (Input.mousePosition.x >= startPos.x + pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.right);
-                fingerDown = false;
-                Debug.Log("Swipe right");
                 player.Move(Vector3.right);
+                cameraCon.Move();
                 player.Rotation(90);
+                fingerDown = false;
+                Debug.Log("Swipe right");           
 
             }
             else if (Input.mousePosition.x <= startPos.x - pixelDistToDetect)
             {
-                cameraCon.Move(Vector3.left);
-                fingerDown = false;
-                Debug.Log("Swipe left");
                 player.Move(Vector3.left);
+                cameraCon.Move();
                 player.Rotation(-90);
+                fingerDown = false;
+                Debug.Log("Swipe left");             
 
             }
 

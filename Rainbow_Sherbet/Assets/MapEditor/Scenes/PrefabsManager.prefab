@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5449757231379087937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5449757231379087807}
+  - component: {fileID: 5449757231379087936}
+  m_Layer: 0
+  m_Name: PrefabsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5449757231379087807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449757231379087937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5449757231379087936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449757231379087937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa49110e30c4b245b86e768e27c10c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NULLBlock: {fileID: 5758582756618999164, guid: 96dbe0fae9aa6b246818f549270cef66, type: 3}
+  ColorBlocks:
+  - {fileID: 7027010555982303135, guid: a9e098d3318fe014baa153db6c0225cc, type: 3}
+  - {fileID: 7027010555982303135, guid: 9cfaa0c816516654dbd80b3dc42ce736, type: 3}
+  - {fileID: 7027010555982303135, guid: abe2f626f3ec9d84794a52b4b3ea5db1, type: 3}
+  - {fileID: 7027010555982303135, guid: 255ac7dfc29813a48b3854a0502a5fd8, type: 3}
+  - {fileID: 7027010555982303135, guid: db5bd9185472106428fe49cfed93d9ab, type: 3}
+  - {fileID: 7027010555982303135, guid: 567356f018398a948b045ca5bffba02a, type: 3}
+  - {fileID: 7027010555982303135, guid: 9464f661fbb03bf49b9bade24163607b, type: 3}
+  ObstacleBlocks:
+  - {fileID: 3695432416806612357, guid: 42a346a815907634cb2ab8f914c53d19, type: 3}
+  ETCBlocks:
+  - {fileID: 3695432416806612357, guid: 25426dbea5427ee42900e4bca7386c1c, type: 3}
+  - {fileID: 3695432416806612357, guid: 6c6c2f28bfd335846ab523fd23c7dc06, type: 3}
