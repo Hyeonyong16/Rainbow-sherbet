@@ -19,8 +19,8 @@ public class GameManagerUI : MonoBehaviour
 
     public int stageNum = 0;// 몇 스테이지를 알려주는 변수
     //별 관련 변수추가
-
-
+    public int stageNumStars = 0; // 스테이지별 총 별개수 - MAX : 3
+    public int totalNumStars = 0; // 스테이지 1에서 스테이지  10까지 총 별개수 - MAX :30
 
 
 }

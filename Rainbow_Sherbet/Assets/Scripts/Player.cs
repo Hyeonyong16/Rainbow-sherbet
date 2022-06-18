@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
     public float power = 30f;
     private void Start()
     {
-        targetPos = transform.position;
-        teleportPos = teleport.gameObject.transform.position;
         playerColor = gameObject.GetComponent<Renderer>();
-        Color_Init();
         rb = gameObject.GetComponent<Rigidbody>();
+        InitPos();
+        Color_Init();
+        InitColorLimit();
     }
 
     public void Move(Vector3 moveDirection)
@@ -74,7 +74,52 @@ public class Player : MonoBehaviour
         this.transform.localEulerAngles = new Vector3(0,angle,0);
     }
 
-    //테스트-----------------
+    void InitColorLimit()
+    {
+        switch (GameManagerUI._instance.stageNum)
+        {
+            case 1:
+                colorLimitCount = 2;
+                break;
+            case 2:
+                colorLimitCount = 2;
+                break;
+            case 3:
+                colorLimitCount = 3;
+                break;
+            case 4:
+                colorLimitCount = 4;
+                break;
+            case 5:
+                colorLimitCount = 4;
+                break;
+            case 6:
+                colorLimitCount = 5;
+                break;
+            case 7:
+                colorLimitCount = 5;
+                break;
+            case 8:
+                colorLimitCount = 6;
+                break;
+            case 9:
+                colorLimitCount = 7;
+                break;
+            case 10:
+                colorLimitCount = 7;
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    void InitPos()
+    {
+        targetPos = transform.position;
+        teleportPos = teleport.gameObject.transform.position;
+    }
+
     void Color_Init()
     {
         color_count[0] = 0;
@@ -85,7 +130,7 @@ public class Player : MonoBehaviour
         color_count[5] = 5;
         color_count[6] = 6;
     }
-    //----------------------
+
     public void ColorChange(int color) // 색상을 숫자로 규정하기 
     {
         switch (color)
@@ -142,7 +187,7 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "Star")
         {
-            //별획득시 별개수를 올려주는 변수 추가 부분
+            GameManagerUI._instance.stageNumStars++;
             Debug.Log("Get Star~~");
         }
     }
