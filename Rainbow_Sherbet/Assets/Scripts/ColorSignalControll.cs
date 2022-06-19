@@ -151,7 +151,7 @@ public class ColorSignalControll : MonoBehaviour
 
             else if (player.count == 4)
             {
-                this.transform.GetChild(0).GetComponent<Image>().sprite = colorSprites[player.count + 4]; //0
+                this.transform.GetChild(0).GetComponent<Image>().sprite = colorSprites[player.count - 4]; //0
                 this.transform.GetChild(1).GetComponent<Image>().sprite = colorSprites[player.count - 3]; //1
                 this.transform.GetChild(2).GetComponent<Image>().sprite = colorSprites[player.count - 2]; //2
                 this.transform.GetChild(3).GetComponent<Image>().sprite = colorSprites[player.count - 1]; //3
