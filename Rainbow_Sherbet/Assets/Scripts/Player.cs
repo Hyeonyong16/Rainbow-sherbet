@@ -160,6 +160,14 @@ public class Player : MonoBehaviour
             }
         }
 
+
+        if (coll.gameObject.tag == "FinishBlock")
+        {
+            //스테이지 클리어창 띄우기
+            Debug.Log("Stage End");
+        }
+
+
     }
 
     private void OnTriggerExit(Collider coll)

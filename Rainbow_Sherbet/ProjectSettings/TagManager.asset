@@ -12,6 +12,7 @@ TagManager:
   - Teleport4
   - Blocks
   - Star
+  - FinishBlock
   layers:
   - Default
   - TransparentFX
