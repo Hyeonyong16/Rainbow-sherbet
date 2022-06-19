@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text[] text_time; // 시간을 표시할 text
-    float time; // 시간.
+   public Text[] text_time; // 시간을 표시할 text
+   public float time; // 시간.
 
     // Start is called before the first frame update
     void Start()

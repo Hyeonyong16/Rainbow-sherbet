@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
 
     Rigidbody rb;
     public float power = 30f;
+
+    public GameObject ClearScreen;
+    public GameObject FailedScreen;
+
     private void Start()
     {
         ani = GetComponent<Animator>();
@@ -164,7 +168,11 @@ public class Player : MonoBehaviour
         if (coll.gameObject.tag == "FinishBlock")
         {
             //스테이지 클리어창 띄우기
+            ClearScreen.SetActive(true);
             Debug.Log("Stage End");
+            Time.timeScale = 0;
+            Debug.Log(Time.timeScale);
+
         }
 
 
@@ -175,12 +183,16 @@ public class Player : MonoBehaviour
         if (coll.gameObject.tag == "Blocks")
         {
             //실패창 넣기 
+            FailedScreen.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (coll.gameObject.tag == "StartBlock")
         {
             //실패창 넣기
-            Debug.Log("YOU DIE!!!!!!!!");
+            Debug.Log("YOU DIE!!!!!!!!");         
+            FailedScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -196,7 +208,7 @@ public class Player : MonoBehaviour
         if (currTime > limitTime)
         {
             count++;
-            if (count > 6)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
+            if (count > 1)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
                 count = 0;
 
             ColorChange(color_count[count]);
