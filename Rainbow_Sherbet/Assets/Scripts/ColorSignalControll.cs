@@ -20,7 +20,7 @@ public class ColorSignalControll : MonoBehaviour
 
     void ColorSignalPlay()
     {
-        if (checkNum ==1) // GameManagerUI._instance.colorLimitCount 비교
+        if (GameManagerUI._instance.colorLimitCount == 1) // GameManagerUI._instance.colorLimitCount 비교
         {
             if (player.count == -1)
             {
@@ -39,7 +39,7 @@ public class ColorSignalControll : MonoBehaviour
             }
         }
 
-        else if (checkNum == 2)
+        else if (GameManagerUI._instance.colorLimitCount == 2)
         {
             if (player.count < 0)
             {
@@ -67,7 +67,7 @@ public class ColorSignalControll : MonoBehaviour
             }
         }
 
-        else if (checkNum == 3)
+        else if (GameManagerUI._instance.colorLimitCount == 3)
         {
             if (player.count < 0) //-1
             {
@@ -106,7 +106,7 @@ public class ColorSignalControll : MonoBehaviour
             }
         }
 
-        else if (checkNum == 4)
+        else if (GameManagerUI._instance.colorLimitCount == 4)
         {
             if (player.count < 0) //-1
             {
@@ -160,7 +160,7 @@ public class ColorSignalControll : MonoBehaviour
 
         }
 
-        else if (checkNum == 5)
+        else if (GameManagerUI._instance.colorLimitCount == 5)
         {
             if (player.count < 0) //-1
             {
@@ -229,7 +229,7 @@ public class ColorSignalControll : MonoBehaviour
             }
         }
 
-        else if (checkNum == 6)
+        else if (GameManagerUI._instance.colorLimitCount == 6)
         {
             if (player.count < 0) //-1
             {
