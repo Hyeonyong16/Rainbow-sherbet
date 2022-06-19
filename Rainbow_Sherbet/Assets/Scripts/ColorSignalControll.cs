@@ -7,7 +7,6 @@ public class ColorSignalControll : MonoBehaviour
 {
     public Player player;
     public Sprite[] colorSprites = new Sprite[7];
-    int colorCount = 0;
     public int checkNum = 0;
 
     private void FixedUpdate()
