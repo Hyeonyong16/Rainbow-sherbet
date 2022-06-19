@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     public void Move(Vector3 moveDirection)
     {
         targetPos += moveDirection;
-        ani.SetBool("move", true);
+        //ani.SetBool("move", true);
         ch = true;    
 
     }
@@ -160,6 +160,7 @@ public class Player : MonoBehaviour
         {
             if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
             {
+                FailedScreen.SetActive(true);
                 Debug.Log("No Matches!!!");
             }
         }
@@ -175,24 +176,23 @@ public class Player : MonoBehaviour
 
         }
 
-
-    }
-
-    private void OnTriggerExit(Collider coll)
-    {
-        if (coll.gameObject.tag == "Blocks")
+        if (coll.gameObject.tag == "TrashBlock")
         {
             //실패창 넣기 
             FailedScreen.SetActive(true);
             Time.timeScale = 0;
         }
+    }
 
-        if (coll.gameObject.tag == "StartBlock")
+    private void OnTriggerStay(Collider coll)
+    {
+        if (coll.gameObject.tag == "Blocks")
         {
-            //실패창 넣기
-            Debug.Log("YOU DIE!!!!!!!!");         
-            FailedScreen.SetActive(true);
-            Time.timeScale = 0;
+            if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
+            {
+                FailedScreen.SetActive(true);
+                Debug.Log("No Matches!!!");
+            }
         }
     }
 
@@ -217,10 +217,10 @@ public class Player : MonoBehaviour
             
         }
 
-        if (ch)
-        {
-            ani.SetBool("move", false);
-            ch = false;
-        }
+        //if (ch)
+        //{
+        //    ani.SetBool("move", false);
+        //    ch = false;
+        //}
     }
 }

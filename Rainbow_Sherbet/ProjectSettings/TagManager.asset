@@ -17,6 +17,8 @@ TagManager:
   - Star1
   - Star2
   - Clear
+  - StartBlock
+  - TrashBlock
   layers:
   - Default
   - TransparentFX
