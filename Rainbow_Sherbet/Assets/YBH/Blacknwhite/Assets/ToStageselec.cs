@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToMainsc : MonoBehaviour
+public class ToStageselec : MonoBehaviour
 {
+    public void Scenetotitle()
+    {
+        SceneManager.LoadScene("Stage_select");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +18,6 @@ public class ToMainsc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            {
-            SceneManager.LoadScene("Stage_select"); // Main scene ¿Ãµø
-            }
+
     }
 }
