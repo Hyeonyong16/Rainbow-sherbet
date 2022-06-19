@@ -24,7 +24,7 @@ public class GameManagerUI : MonoBehaviour
     public int colorLimitCount = 0;// 스테이지별 색상제한 변수
 
     public int Stage1_Star_EndNum = 0;
-    public int Stage1_Star_ClearNum = 0;
+    public int Stage1_Star_ClearNum = 0; 
 
     public int Stage2_Star_EndNum = 0;
     public int Stage2_Star_ClearNum = 0;
