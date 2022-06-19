@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
+  m_CellSize: {x: 220, y: 200}
   m_Spacing: {x: 60, y: 150}
   m_Constraint: 1
   m_ConstraintCount: 5
@@ -3385,6 +3385,7 @@ MonoBehaviour:
   stageNum: 0
   stageNumStars: 0
   totalNumStars: 0
+  colorLimitCount: 0
 --- !u!4 &1171250607
 Transform:
   m_ObjectHideFlags: 0
