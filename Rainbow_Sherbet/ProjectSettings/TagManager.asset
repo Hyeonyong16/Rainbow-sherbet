@@ -13,6 +13,10 @@ TagManager:
   - Blocks
   - Star
   - FinishBlock
+  - Star3
+  - Star1
+  - Star2
+  - Clear
   layers:
   - Default
   - TransparentFX
