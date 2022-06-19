@@ -15,19 +15,22 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStageSelect()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage_select");
     }
     
     public void LoadStage1()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 1;
         GameManagerUI._instance.stageNumStars = 0;
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadSceneAsync("Stage1");     
     }
 
     public void LoadStage2()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 1;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage2");
@@ -35,6 +38,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage3()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 2;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage3");
@@ -42,6 +46,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage4()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 3;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage4");
@@ -49,6 +54,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage5()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 3;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage5");
@@ -56,6 +62,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage6()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 4;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage6");
@@ -63,6 +70,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage7()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 4;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage7");
@@ -71,6 +79,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage8()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 5;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage8");
@@ -78,6 +87,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage9()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 6;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage9");
