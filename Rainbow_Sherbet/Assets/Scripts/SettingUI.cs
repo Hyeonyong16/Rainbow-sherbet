@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
 {
@@ -26,4 +27,10 @@ public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
     {
         SettingScreen.SetActive(false);
     }
+
+    public void ToStageSelect()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }

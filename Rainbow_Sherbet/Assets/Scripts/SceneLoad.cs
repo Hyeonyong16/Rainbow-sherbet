@@ -18,7 +18,7 @@ public class SceneLoad : MonoBehaviour
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage_select");
     }
-
+    
     public void LoadStage1()
     {
         GameManagerUI._instance.colorLimitCount = 2;
