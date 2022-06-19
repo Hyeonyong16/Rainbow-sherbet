@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public float moveSpeed =30f;
     public float currTime; // 지금흐르는시간
+    public bool checkChangeColor = false;
+
     public float limitTime = 1.2f; // 색상이 바뀌는 제한시간 (Default value : 1.2f)
 
     public GameObject teleport;
@@ -160,8 +162,12 @@ public class Player : MonoBehaviour
         {
             if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
             {
-                FailedScreen.SetActive(true);
-                Debug.Log("No Matches!!!");
+                if (!checkChangeColor)
+                {
+                    FailedScreen.SetActive(true);
+                    Debug.Log("No Matches!!!");
+                }
+               
             }
         }
 
@@ -190,23 +196,33 @@ public class Player : MonoBehaviour
         {
             if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
             {
-                FailedScreen.SetActive(true);
-                Debug.Log("No Matches!!!");
+                if (!checkChangeColor)
+                {
+                    FailedScreen.SetActive(true);
+                    Debug.Log("No Matches!!!");
+                }
+               
             }
         }
     }
 
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         currTime += Time.deltaTime;
+        //checkTime += Time.deltaTime;
 
         //rb.AddForce(Vector3.forward * power);
+
+       
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         if (currTime > limitTime)
         {
+           
+
+
             count++;
             if (count > 1)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
                 count = 0;
@@ -216,7 +232,10 @@ public class Player : MonoBehaviour
             currTime = 0;
             
         }
-
+        if ((currTime < 0.4f && currTime >= 0f) || (currTime >= 1.0f && currTime <= 1.2f))
+            checkChangeColor = true;
+        else if( currTime > 0.4f && currTime < 1.0f)
+            checkChangeColor = false;
         //if (ch)
         //{
         //    ani.SetBool("move", false);
