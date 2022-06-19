@@ -6011,6 +6011,28 @@ MonoBehaviour:
   power: 30
   ClearScreen: {fileID: 758957466}
   FailedScreen: {fileID: 719752486}
+--- !u!114 &1430084748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430084745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d7cfdcd510c4b428975c38945d973e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarImage:
+  - {fileID: 1062859153}
+  - {fileID: 1521247841}
+  - {fileID: 1834046682}
+  - {fileID: 1542651391}
+  - {fileID: 300020963}
+  - {fileID: 1345190702}
+  - {fileID: 285147326}
+  - {fileID: 949896691}
+  - {fileID: 1586361996}
 --- !u!1 &1467757707
 GameObject:
   m_ObjectHideFlags: 0

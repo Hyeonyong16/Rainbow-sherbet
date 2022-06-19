@@ -152,9 +152,11 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "Star")
         {
-            //GameManagerUI._instance.stageNumStars++;                     
-            Destroy(coll.gameObject);
+            //이거 고쳐야할 수도 잇음
+            GameManagerUI._instance.stageNumStars++;
             Debug.Log("Get Star~~");
+            Destroy(coll.gameObject);
+            
         }
 
 
@@ -163,8 +165,9 @@ public class Player : MonoBehaviour
             if (coll.gameObject.GetComponent<Renderer>().material.color != this.gameObject.GetComponent<Renderer>().material.color)
             {
                 if (!checkChangeColor)
-                {
+                {             
                     FailedScreen.SetActive(true);
+                    Time.timeScale = 0;
                     Debug.Log("No Matches!!!");
                 }
                
@@ -174,12 +177,12 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "FinishBlock")
         {
-            //스테이지 클리어창 띄우기
+            //스테이지 클리어창 띄우기           
             ClearScreen.SetActive(true);
             Debug.Log("Stage End");
             Time.timeScale = 0;
             Debug.Log(Time.timeScale);
-
+            
         }
 
         if (coll.gameObject.tag == "TrashBlock")
@@ -199,6 +202,7 @@ public class Player : MonoBehaviour
                 if (!checkChangeColor)
                 {
                     FailedScreen.SetActive(true);
+                    Time.timeScale = 0;
                     Debug.Log("No Matches!!!");
                 }
                

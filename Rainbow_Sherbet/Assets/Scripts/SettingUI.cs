@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
 {
     public GameObject SettingScreen;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         
@@ -15,7 +17,7 @@ public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
    public void OnSetting()
@@ -32,5 +34,6 @@ public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
     {
         SceneManager.LoadScene(1);
     }
+
 
 }

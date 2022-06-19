@@ -23,4 +23,34 @@ public class GameManagerUI : MonoBehaviour
     public int totalNumStars = 0; // 스테이지 1에서 스테이지  10까지 총 별개수 - MAX :30
     public int colorLimitCount = 0;// 스테이지별 색상제한 변수
 
+    public int Stage1_Star_EndNum = 0;
+    public int Stage1_Star_ClearNum = 0;
+
+    public int Stage2_Star_EndNum = 0;
+    public int Stage2_Star_ClearNum = 0;
+
+    public int Stage3_Star_EndNum = 0;
+    public int Stage3_Star_ClearNum = 0;
+
+    public int Stage4_Star_EndNum = 0;
+    public int Stage4_Star_ClearNum = 0;
+
+    public int Stage5_Star_EndNum = 0;
+    public int Stage5_Star_ClearNum = 0;
+
+    public int Stage6_Star_EndNum = 0;
+    public int Stage6_Star_ClearNum = 0;
+
+    public int Stage7_Star_EndNum = 0;
+    public int Stage7_Star_ClearNum = 0;
+
+    public int Stage8_Star_EndNum = 0;
+    public int Stage8_Star_ClearNum = 0;
+
+    public int Stage9_Star_EndNum = 0;
+    public int Stage9_Star_ClearNum = 0;
+
+    public int Stage10_Star_EndNum = 0;
+    public int Stage10_Star_ClearNum = 0;
+
 }

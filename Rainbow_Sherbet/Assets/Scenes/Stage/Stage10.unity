@@ -6110,6 +6110,28 @@ MonoBehaviour:
   power: 30
   ClearScreen: {fileID: 231142624}
   FailedScreen: {fileID: 2024880802}
+--- !u!114 &1232376965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232376963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d7cfdcd510c4b428975c38945d973e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarImage:
+  - {fileID: 1376622970}
+  - {fileID: 1750752815}
+  - {fileID: 945435926}
+  - {fileID: 2013484901}
+  - {fileID: 882749296}
+  - {fileID: 471936270}
+  - {fileID: 89613028}
+  - {fileID: 1250396429}
+  - {fileID: 889754965}
 --- !u!95 &1232376967 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1607513130296116712, guid: 8685745f0fd204b448cdcd9d808065f2, type: 3}
