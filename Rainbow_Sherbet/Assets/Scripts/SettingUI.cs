@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
 {
     public GameObject SettingScreen;
+    public GameObject InstructionScreen;
 
 
     void Start()
@@ -30,10 +31,21 @@ public class SettingUI : MonoBehaviour //환경설정 UI ON/OFF
         SettingScreen.SetActive(false);
     }
 
+    public void OnInstructionScreen()
+    {
+        InstructionScreen.SetActive(true);
+    }
+
+    public void OffInstructionScreen()
+    {
+        InstructionScreen.SetActive(false);
+    }
+
     public void ToStageSelect()
     {
         SceneManager.LoadScene(1);
     }
+
 
 
 }
