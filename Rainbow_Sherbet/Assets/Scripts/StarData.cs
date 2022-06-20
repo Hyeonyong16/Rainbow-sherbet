@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StarData : MonoBehaviour //
+public class StarData : MonoBehaviour
 {
     public Image[] StarImage; //각 스테이지마다 스타이미지 표현해줘야 되는 거  012 = 스테이지에서 보이는 별 , 345 = 클리어 ui 별, 678 = 실패 ui 별
 

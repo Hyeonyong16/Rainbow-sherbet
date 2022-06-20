@@ -4257,6 +4257,26 @@ MonoBehaviour:
   stageNumStars: 0
   totalNumStars: 0
   colorLimitCount: 0
+  Stage1_Star_EndNum: 0
+  Stage1_Star_ClearNum: 0
+  Stage2_Star_EndNum: 0
+  Stage2_Star_ClearNum: 0
+  Stage3_Star_EndNum: 0
+  Stage3_Star_ClearNum: 0
+  Stage4_Star_EndNum: 0
+  Stage4_Star_ClearNum: 0
+  Stage5_Star_EndNum: 0
+  Stage5_Star_ClearNum: 0
+  Stage6_Star_EndNum: 0
+  Stage6_Star_ClearNum: 0
+  Stage7_Star_EndNum: 0
+  Stage7_Star_ClearNum: 0
+  Stage8_Star_EndNum: 0
+  Stage8_Star_ClearNum: 0
+  Stage9_Star_EndNum: 0
+  Stage9_Star_ClearNum: 0
+  Stage10_Star_EndNum: 0
+  Stage10_Star_ClearNum: 0
 --- !u!4 &1792226009
 Transform:
   m_ObjectHideFlags: 0

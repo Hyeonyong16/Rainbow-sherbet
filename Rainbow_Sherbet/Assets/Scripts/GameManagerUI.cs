@@ -23,8 +23,8 @@ public class GameManagerUI : MonoBehaviour
     public int totalNumStars = 0; // 스테이지 1에서 스테이지  10까지 총 별개수 - MAX :30
     public int colorLimitCount = 0;// 스테이지별 색상제한 변수
 
-    public int Stage1_Star_EndNum = 0;
-    public int Stage1_Star_ClearNum = 0; 
+    public int Stage1_Star_EndNum = 0;      //EndNum = 플레이어가 가장 많은 별을 먹고 깻을때
+    public int Stage1_Star_ClearNum = 0;    //ClearNum = 플레이어가 처음 깻을때 별 개수
 
     public int Stage2_Star_EndNum = 0;
     public int Stage2_Star_ClearNum = 0;
