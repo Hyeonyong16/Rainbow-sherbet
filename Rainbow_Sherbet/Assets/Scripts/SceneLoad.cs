@@ -95,6 +95,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadStage10()
     {
+        Time.timeScale = 1;
         GameManagerUI._instance.colorLimitCount = 6;
         GameManagerUI._instance.stageNumStars = 0;
         SceneManager.LoadScene("Stage10");

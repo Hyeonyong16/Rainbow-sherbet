@@ -2588,6 +2588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tortoise2
       objectReference: {fileID: 0}
+    - target: {fileID: 8946540100259613246, guid: a6002dee3229d954384f4b1de9a0901d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6002dee3229d954384f4b1de9a0901d, type: 3}
 --- !u!1 &484279125
@@ -2941,6 +2945,10 @@ PrefabInstance:
     - target: {fileID: 6489180742189515604, guid: 50bf0d89f095438448e61792c16f8bef, type: 3}
       propertyPath: m_Name
       value: Rabbit1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489180742189515609, guid: 50bf0d89f095438448e61792c16f8bef, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6489180742189515611, guid: 50bf0d89f095438448e61792c16f8bef, type: 3}
       propertyPath: m_RootOrder
@@ -7698,6 +7706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit2
       objectReference: {fileID: 0}
+    - target: {fileID: 6489180742189515609, guid: 50bf0d89f095438448e61792c16f8bef, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6489180742189515611, guid: 50bf0d89f095438448e61792c16f8bef, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10604,6 +10616,10 @@ PrefabInstance:
     - target: {fileID: 8946540100259613245, guid: a6002dee3229d954384f4b1de9a0901d, type: 3}
       propertyPath: m_Name
       value: Tortoise1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946540100259613246, guid: a6002dee3229d954384f4b1de9a0901d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6002dee3229d954384f4b1de9a0901d, type: 3}
