@@ -84,10 +84,10 @@ public class Player : MonoBehaviour
                 playerColor.material.color = new Color(255/255f , 140/255f, 0/255f); // 주 (노란색이랑 구분불가라 다크오렌지로변경)
                 break;
             case 2:
-                playerColor.material.color = Color.yellow;// 노
+                playerColor.material.color = new Color(255 / 255f, 255 / 255f, 0 / 255f); ;// 노
                 break;
             case 3:
-                playerColor.material.color = Color.green;//초
+                playerColor.material.color = new Color(0 / 255f, 128 / 255f, 0 / 255f);//초
                 break;
             case 4:
                 playerColor.material.color =Color.blue;//파 (남색 구분을위해  Deep Sky Blue 로 변경)
@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
 
 
             count++;
-            if (count > 1)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
+            if (count > GameManagerUI._instance.colorLimitCount)//GameManagerUI._instance.colorLimitCount) // 완성시 변경
                 count = 0;
 
             ColorChange(color_count[count]);
