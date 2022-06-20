@@ -140,20 +140,20 @@ public class Player : MonoBehaviour
         {
             limitTime = 2.0f;
             Debug.Log("Oops turtle!");
-
+            Destroy(coll.gameObject);
         }
 
         if (coll.gameObject.tag == "Rabbit")
         {
             limitTime = 0.8f;
             Debug.Log("Wow Rabbit");
-
+            Destroy(coll.gameObject);
         }
 
         if (coll.gameObject.tag == "Star")
         {
             //이거 고쳐야할 수도 잇음
-            GameManagerUI._instance.stageNumStars++;
+            GameManagerUI._instance.stageNumStars = GameManagerUI._instance.stageNumStars+1;
             Debug.Log("Get Star~~");
             Destroy(coll.gameObject);
             
