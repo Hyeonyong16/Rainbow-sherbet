@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 [System.Serializable]
@@ -22,7 +23,10 @@ public class GameManagerJsonParser : MonoBehaviour
         if(gameManagerUI == null)
             gameManagerUI = gameObject.GetComponent<GameManagerUI>();
 
-        SetStarData();
+        if(SceneManager.GetActiveScene().name == "Title")
+        {
+            LoadStarDataToJson();
+        }
     }
 
     // Update is called once per frame

@@ -182,7 +182,11 @@ public class Player : MonoBehaviour
             Debug.Log("Stage End");
             Time.timeScale = 0;
             Debug.Log(Time.timeScale);
-            
+
+            //클리어 순간 별 데이터 저장
+            GameManagerJsonParser gameManagerJsonParser = GameObject.Find("GameManagerUI").GetComponent<GameManagerJsonParser>();
+            gameManagerJsonParser.SaveStarDataToJson();
+
         }
 
         if (coll.gameObject.tag == "TrashBlock")
